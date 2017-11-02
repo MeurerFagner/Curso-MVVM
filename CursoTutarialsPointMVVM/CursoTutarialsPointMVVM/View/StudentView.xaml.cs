@@ -10,7 +10,8 @@ namespace CursoTutarialsPointMVVM.View
         public StudentView()
         {
             InitializeComponent();
-            this.DataContext = new ViewModel.StudentViewModel();
+            //Data context autohooked
+            //this.DataContext = new ViewModel.StudentViewModel();
         }
     }
 }

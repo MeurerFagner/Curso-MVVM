@@ -25,7 +25,7 @@ namespace CursoTutarialsPointMVVM.Model
                 {
                     firstName = value;
                     RaisePropertChanged("FirstName");
-                    RaisePropertChanged("LastName");
+                    RaisePropertChanged("FullName");
                 }
             }
         }
@@ -42,7 +42,7 @@ namespace CursoTutarialsPointMVVM.Model
                 {
                     lastName = value;
                     RaisePropertChanged("LastName");
-                    RaisePropertChanged("FirstName");
+                    RaisePropertChanged("FullName");
                 }
             }
         }
@@ -54,12 +54,10 @@ namespace CursoTutarialsPointMVVM.Model
                 return firstName + " " + lastName;
             }
         }
+
         private void RaisePropertChanged(string property)
         {
-            if (PropertyChanged != null)
-            {
-                PropertyChanged(this, new PropertyChangedEventArgs(property));
-            }
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(property));
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
