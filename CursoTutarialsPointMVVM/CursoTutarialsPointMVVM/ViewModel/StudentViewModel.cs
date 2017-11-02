@@ -10,14 +10,35 @@ namespace CursoTutarialsPointMVVM.ViewModel
 {
     class StudentViewModel
     {
+        public ObservableCollection<Student> Students { get; set; }
+        public MyCommand DeleteCommand { get; set; }
+
+        private Student selectedStudent;
+
+        public Student SelectedStudent
+        {
+            get { return selectedStudent; }
+            set
+            {
+                selectedStudent = value;
+                DeleteCommand.RaiseCanExecuteChanged();
+            }
+        }
+
         public StudentViewModel()
         {
             LoadStudents();
+            DeleteCommand = new MyCommand(OnDelete, CanDelete);          
         }
-        public ObservableCollection<Student> Students
+
+        private bool CanDelete()
         {
-            get;
-            set;
+            return SelectedStudent != null;
+        }
+
+        private void OnDelete()
+        {
+            Students.Remove(SelectedStudent);
         }
 
         public void LoadStudents()

@@ -5,33 +5,41 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:CursoTutarialsPointMVVM.View"
              xmlns:ViewModel="clr-namespace:CursoTutarialsPointMVVM.ViewModel"
+             xmlns:data="clr-namespace:CursoTutarialsPointMVVM.Model"
              xmlns:vml="clr-namespace:CursoTutarialsPointMVVM.VML"
              vml:ViewModelLocator.AutoHookedUpViewModel="True"
              mc:Ignorable="d" 
              d:DesignHeight="300" d:DesignWidth="300">
+    <UserControl.Resources>
+        <DataTemplate DataType = "{x:Type data:Student}">
+
+            <StackPanel Orientation = "Horizontal">
+
+                <TextBox Text = "{Binding Path = FirstName, Mode = TwoWay}" 
+               Width = "100" Margin = "3 5 3 5"/>
+
+                <TextBox Text = "{Binding Path = LastName, Mode = TwoWay}" 
+               Width = "100" Margin = "0 5 3 5"/>
+
+                <TextBlock Text = "{Binding Path = FullName, Mode = OneWay}" 
+               Margin = "0 5 3 5"/>
+
+            </StackPanel>
+
+        </DataTemplate>
+    </UserControl.Resources>
+
     <Grid>
-        <StackPanel HorizontalAlignment = "Left">
+        <StackPanel Orientation = "Horizontal">
+            <ListBox ItemsSource = "{Binding Students}" 
+            SelectedItem = "{Binding SelectedStudent}"/>
 
-            <ItemsControl ItemsSource = "{Binding Path = Students}">
-
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <StackPanel Orientation = "Horizontal">
-                            <TextBox Text = "{Binding Path = FirstName, Mode = TwoWay}" 
-                        Width = "100" Margin = "3 5 3 5"/>
-
-                            <TextBox Text = "{Binding Path = LastName, Mode = TwoWay}" 
-                        Width = "100" Margin = "0 5 3 5"/>
-
-                            <TextBlock Text = "{Binding Path = FullName, Mode = OneWay}" 
-                        Margin = "0 5 3 5"/>
-
-                        </StackPanel>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
-
-            </ItemsControl>
-
+            <Button Content = "Delete" 
+            Command = "{Binding DeleteCommand}"
+            HorizontalAlignment = "Left" 
+            VerticalAlignment = "Top" 
+            Width = "75" />
         </StackPanel>
     </Grid>
+
 </UserControl>
