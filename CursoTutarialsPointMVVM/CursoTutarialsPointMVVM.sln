@@ -1,9 +1,11 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27004.2005
+VisualStudioVersion = 15.0.27004.2006
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CursoTutarialsPointMVVM", "CursoTutarialsPointMVVM\CursoTutarialsPointMVVM.csproj", "{60FF6724-6397-481B-80A6-8CEEDEEA6493}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MVVMHierachiesDemo", "MVVMHierachiesDemo\MVVMHierachiesDemo.csproj", "{045ED21B-A170-4643-B4F7-9F7B20913BD5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{60FF6724-6397-481B-80A6-8CEEDEEA6493}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{60FF6724-6397-481B-80A6-8CEEDEEA6493}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{60FF6724-6397-481B-80A6-8CEEDEEA6493}.Release|Any CPU.Build.0 = Release|Any CPU
+		{045ED21B-A170-4643-B4F7-9F7B20913BD5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{045ED21B-A170-4643-B4F7-9F7B20913BD5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{045ED21B-A170-4643-B4F7-9F7B20913BD5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{045ED21B-A170-4643-B4F7-9F7B20913BD5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
