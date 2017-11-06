@@ -8,7 +8,7 @@ using System.Windows.Controls;
 
 namespace MVVMHierachiesDemo.ViewModel
 {
-    class AddEditCustomerViewModel : PropertyChangedNotification
+    public class AddEditCustomerViewModel : PropertyChangedNotification
     {
 
         public AddEditCustomerViewModel()

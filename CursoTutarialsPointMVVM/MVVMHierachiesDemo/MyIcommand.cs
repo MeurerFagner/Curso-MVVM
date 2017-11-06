@@ -7,7 +7,7 @@ using System.Windows.Input;
 
 namespace MVVMHierachiesDemo
 {
-    class MyIcommand : ICommand
+    public class MyIcommand : ICommand
     {
         Action _TargetExecuteMethod;
         Func<bool> _TargetCanExecuteMethod;

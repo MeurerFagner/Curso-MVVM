@@ -54,10 +54,7 @@ namespace MVVMHierachiesDemo
 
         void ICommand.Execute(object parameter)
         {
-            if (_TargetExecuteMethod != null)
-            {
-                _TargetExecuteMethod((T)parameter);
-            }
+            _TargetExecuteMethod?.Invoke((T)parameter);
         }
 
         #endregion

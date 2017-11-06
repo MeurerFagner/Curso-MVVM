@@ -76,8 +76,7 @@ namespace MVVMHierachiesDemo
                 throw new ArgumentException("Invalid property name", propertyName);
             }
 
-            object value;
-            if (!_values.TryGetValue(propertyName, out value))
+            if (!_values.TryGetValue(propertyName, out object value))
             {
                 value = default(T);
                 _values.Add(propertyName, value);
@@ -190,8 +189,7 @@ namespace MVVMHierachiesDemo
 
         private object GetValue(string propertyName)
         {
-            object value;
-            if (!_values.TryGetValue(propertyName, out value))
+            if (!_values.TryGetValue(propertyName, out object value))
             {
                 var propertyDescriptor = TypeDescriptor.GetProperties(GetType()).Find(propertyName, false);
                 if (propertyDescriptor == null)
